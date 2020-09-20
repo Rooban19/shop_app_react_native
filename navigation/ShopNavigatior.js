@@ -6,6 +6,8 @@ import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 import CartScreen from '../screens/shop/CartScreen';
 import OrderScreen from '../screens/shop/OrderScreen';
 import Colors from '../constants/Colors';
+import { Ionicons } from '@expo/vector-icons';
+import React from 'react';
 
 const defaultNavOptions = {
   headerStyle: {
@@ -20,6 +22,11 @@ const ProductsNavigator = createStackNavigator(
     Cart: CartScreen,
   },
   {
+    navigationOptions: {
+      drawerIcon: drawerConfig => (
+        <Ionicons name={'md-cart'} size={24} color={drawerConfig.tintColor} />
+      ),
+    },
     defaultNavigationOptions: defaultNavOptions,
   },
 );
@@ -29,6 +36,11 @@ const OrdersNavigator = createStackNavigator(
     Orders: OrderScreen,
   },
   {
+    navigationOptions: {
+      drawerIcon: drawerConfig => (
+        <Ionicons name={'md-list'} size={24} color={drawerConfig.tintColor} />
+      ),
+    },
     defaultNavigationOptions: defaultNavOptions,
   },
 );

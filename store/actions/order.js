@@ -1,4 +1,4 @@
-export const ADD_ORDER = 'ADD_ORDER_';
+export const ADD_ORDER = 'ADD_ORDER';
 
 export const addOrder = (cartItems, totalAmount) => {
   return {

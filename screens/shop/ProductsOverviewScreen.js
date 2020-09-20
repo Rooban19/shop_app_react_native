@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import ProductItem from "../../components/shop/ProductItem";
 import * as cartAction from '../../store/actions/cart';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import { Ionicans } from '@expo/vector-icons';
+ 
 import HeaderButton from '../../components/UI/HeaderButton';
 
 const ProductsOverviewScreen = props => {
@@ -38,6 +38,17 @@ const ProductsOverviewScreen = props => {
 ProductsOverviewScreen.navigationOptions = navData => {
   return {
     headerTitle: 'All Products',
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Cart"
+          iconName="md-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item

@@ -62,6 +62,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import productsReducer from './store/reducers/product';
+import orderReducer from './store/reducers/order';
 import cartReducer from './store/reducers/cart';
 import ShopNavigatior from './navigation/ShopNavigatior';
 import { AppLoading } from 'expo';
@@ -73,6 +74,7 @@ import * as Font from 'expo-font';
 const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,
+  order: orderReducer,
 });
 
 const store = createStore(rootReducer);

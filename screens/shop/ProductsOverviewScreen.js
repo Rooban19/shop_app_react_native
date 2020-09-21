@@ -28,7 +28,7 @@ const ProductsOverviewScreen = props => {
           title={itemData.item.title}
           price={itemData.item.price}
           onSelect={() => {
-            selectItemhandler(itemData.item.id, itemData.item.tite);
+            selectItemhandler(itemData.item.id, itemData.item.title);
           }}
         >
           <Button

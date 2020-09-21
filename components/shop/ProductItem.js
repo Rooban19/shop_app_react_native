@@ -4,10 +4,9 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
   TouchableNativeFeedback,
 } from 'react-native';
-import Colors from '../../constants/Colors';
+ 
 
 const ProductItem = props => {
   return (

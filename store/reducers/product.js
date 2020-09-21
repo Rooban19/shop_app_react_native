@@ -1,13 +1,25 @@
-const { exp } = require("react-native/Libraries/Animated/src/Easing");
-import PRODUCTS from '../../data/dummy data'
+const { exp } = require('react-native/Libraries/Animated/src/Easing');
+import PRODUCTS from '../../data/dummy data';
+import { DELETE_PRODUCT } from '../actions/product';
 
-const initialState ={
-    availableProducts:PRODUCTS,
-    userProducts: PRODUCTS.filter(prod => prod.ownerId === 'u1')
+const initialState = {
+  availableProducts: PRODUCTS,
+  userProducts: PRODUCTS.filter(prod => prod.ownerId === 'u1'),
 };
 
+export default productsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        userProducts: state.userProducts.filter(
+          product => product.id !== action.pid,
+        ),
 
-
-export default productsReducer = (state = initialState,action) => {
-    return state;
-}
+        availableProducts: state.availableProducts.filter(
+          product => product.id !== action.pid,
+        ),
+      };
+  }
+  return state;
+};

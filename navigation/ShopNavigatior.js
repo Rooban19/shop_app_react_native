@@ -1,4 +1,4 @@
-import {createStackNavigator} from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
@@ -9,6 +9,7 @@ import Colors from '../constants/Colors';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import UserProductScreen from '../screens/user/UserProductScreen';
+import EditProductScreen from '../screens/user/EditProductScreen';
 
 const defaultNavOptions = {
   headerStyle: {
@@ -48,6 +49,7 @@ const OrdersNavigator = createStackNavigator(
 const UserScreenNavigator = createStackNavigator(
   {
     UserScreen: UserProductScreen,
+    EditProduct: EditProductScreen,
   },
   {
     navigationOptions: {
@@ -58,7 +60,6 @@ const UserScreenNavigator = createStackNavigator(
     defaultNavigationOptions: defaultNavOptions,
   },
 );
-
 
 const ShopNavigator = createDrawerNavigator(
   {
